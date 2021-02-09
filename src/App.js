@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
+import AddTask from './components/AddTask'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
     setTasks( tasks.filter( (task) => task.id !== id) )
   }
 
+  // Toggle Reminder 
   const toggleReminder = (id) => {
     setTasks( 
       tasks.map((task) => 
@@ -36,6 +38,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+      <AddTask />
       {tasks.length > 0 ? (
         <Tasks 
           tasks={tasks} 
